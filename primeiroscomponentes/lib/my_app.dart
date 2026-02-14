@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:primeiroscomponentes/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,9 +14,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFFFDD835), // cor primária
+          seedColor: Color(0xFFFDD835),// cor primáriaSS
         ),
-        appBarTheme: const AppBarTheme(
+        textTheme: GoogleFonts.cairoTextTheme(),
+        appBarTheme: AppBarTheme(
           backgroundColor: Color(0xFFFDD835),
           foregroundColor: Colors.white, // cor do texto e ícones
         ),
