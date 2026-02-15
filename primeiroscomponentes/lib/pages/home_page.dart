@@ -64,6 +64,22 @@ class _HomePageState extends State<HomePage> {
             Text("Número aleatório: $numeroGerado",
               // style: GoogleFonts.acme(fontSize: 20),
             ),
+            Container(
+              color: Colors.yellow,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    color: Colors.amberAccent,
+                    child:
+                    Text("10"),
+                  ),
+                  Text("20"),
+                  Text("30"),
+                ],
+              ),
+            )
+
           ],
         ),
       ),
