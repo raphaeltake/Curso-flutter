@@ -56,29 +56,63 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
-            Text("Ações do Usuário",
-            ),
-            Text("Foi clicado $quantidadeCliques vezes",
-              // style: GoogleFonts.acme(fontSize: 20),
-            ),
-            Text("Número aleatório: $numeroGerado",
-              // style: GoogleFonts.acme(fontSize: 20),
+            Container(
+              color: Colors.cyan,
+              child:
+                Text("Ações do Usuário",
+              ),
             ),
             Container(
-              color: Colors.yellow,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    color: Colors.amberAccent,
-                    child:
-                    Text("10"),
-                  ),
-                  Text("20"),
-                  Text("30"),
-                ],
+              color: Colors.orange,
+              child:
+                Text("Foi clicado $quantidadeCliques vezes",
+                // style: GoogleFonts.acme(fontSize: 20),
               ),
-            )
+            ),
+
+            Container(
+              color: Colors.indigo,
+              child:
+              Text("Número aleatório: $numeroGerado",
+                // style: GoogleFonts.acme(fontSize: 20),
+              ),
+            ),
+
+            Expanded(
+                child:
+                Container(
+                  // color: Colors.yellow,
+                  child:
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          color: Colors.amberAccent,
+                          child:
+                          Text("10"),
+                        ),
+                      ),
+
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          color: Colors.red,
+                          child: Text("20"),
+                        ),
+                      ),
+
+                      Expanded(
+                        child: Container(
+                          color: Colors.blue,
+                          child: Text("30"),
+                        ),
+
+                      ),
+                    ],
+                  ),
+                )
+            ),
 
           ],
         ),
