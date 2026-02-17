@@ -57,16 +57,23 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
             Container(
+              height: 200,
+              width: 200,
               color: Colors.cyan,
               child:
                 Text("Ações do Usuário",
               ),
             ),
-            Container(
-              color: Colors.orange,
-              child:
+
+            SizedBox(
+              width: 100,
+              height: 100,
+              child: Container(
+                color: Colors.orange,
+                child:
                 Text("Foi clicado $quantidadeCliques vezes",
-                // style: GoogleFonts.acme(fontSize: 20),
+                  // style: GoogleFonts.acme(fontSize: 20),
+                ),
               ),
             ),
 
