@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:primeiroscomponentes/pages/home_page.dart';
+import 'package:primeiroscomponentes/pages/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFFFDD835),// cor primáriaSS
+          seedColor: Color(0xFFFDD835),// cor primária
         ),
         textTheme: GoogleFonts.cairoTextTheme(),
         appBarTheme: AppBarTheme(
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white, // cor do texto e ícones
         ),
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }
