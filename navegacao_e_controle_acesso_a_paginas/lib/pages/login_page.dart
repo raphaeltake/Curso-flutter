@@ -129,11 +129,19 @@ class _LoginPageState extends State<LoginPage> {
 
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 30),
-                  color: Colors.green,
-                  height: 30,
-                  width: double.infinity,
+                  // color: Colors.green,
+                  // height: 30,
+                  // width: double.infinity,
                   alignment: Alignment.center,
-                  child: Text("Entrar"),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: TextButton(onPressed: (){},
+                      // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.green)),
+                      style: TextButton.styleFrom(backgroundColor: Colors.deepPurple, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                      child: Text("Entrar",
+                        style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w400),),
+                    ),
+                  ),
                 ),
 
                 Expanded(child: Container()),
