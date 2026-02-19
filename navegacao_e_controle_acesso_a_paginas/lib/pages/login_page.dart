@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String email = "";
   String senha = "";
+  bool isObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: TextField(
+                        obscureText: isObscureText,
                         onChanged: (value){
                           senha = value;
                         },
@@ -108,7 +110,35 @@ class _LoginPageState extends State<LoginPage> {
                           prefixIcon: Icon(Icons.lock, color: Colors.deepPurple,),
                           hintText: "Senha",
                           hintStyle: TextStyle(color: Colors.white),
-                          suffixIcon: Icon(Icons.visibility, color: Colors.deepPurple,)
+
+                          //Forma 01:
+                          suffixIcon: InkWell(
+                            onTap: (){
+                              isObscureText = !isObscureText;
+                              setState(() {});
+                            },
+                            child: Icon(
+                              isObscureText ?
+                              Icons.visibility_off:
+                              Icons.visibility,
+                              color: Colors.deepPurple,
+                            ),
+                          )
+
+                            //Forma 02:
+                            // suffixIcon: GestureDetector(
+                            //   onTap: (){
+                            //     isObscureText = !isObscureText;
+                            //     setState(() {});
+                            //   },
+                            //   child: Icon(
+                            //     isObscureText ?
+                            //     Icons.visibility_off:
+                            //     Icons.visibility,
+                            //     color: Colors.deepPurple,
+                            //   ),
+                            // )
+
                         ),
                       )
                     ),
@@ -124,8 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                         width: double.infinity,
                         child: TextButton(
                           onPressed: (){
-                          print(email);
-                          print(senha);
+
                         },
                           // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.green)),
                           style: TextButton.styleFrom(backgroundColor: Colors.deepPurple, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
