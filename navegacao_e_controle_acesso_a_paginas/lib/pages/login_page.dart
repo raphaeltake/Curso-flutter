@@ -8,6 +8,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String email = "";
+  String senha = "";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea( //Respeita a barra de status do aplicativo
@@ -26,19 +29,6 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 70,
                     ),
-
-                    // Container(
-                    //   margin: EdgeInsets.only(top: 50),
-                    //   width: 150,
-                    //   height: 150,
-                    //   color: Colors.amber,
-                    //   alignment: Alignment.center,
-                    //   child: Icon(
-                    //     Icons.person,
-                    //     size: 150,
-                    //     color: Colors.red,
-                    //   ),
-                    // ),
 
                     Row(
                       children: [
@@ -78,6 +68,9 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: TextField(
+                        onChanged: (value){
+                          email = value;
+                        },
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
@@ -93,11 +86,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    // SizedBox(
-                    //   height: 10,
-                    // ),
-
-
                     Container(
                         margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
                       // color: Colors.green,
@@ -105,6 +93,9 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: TextField(
+                        onChanged: (value){
+                          senha = value;
+                        },
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           // contentPadding: EdgeInsets.only(top: 0),
@@ -128,13 +119,14 @@ class _LoginPageState extends State<LoginPage> {
 
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 30),
-                      // color: Colors.green,
-                      // height: 30,
-                      // width: double.infinity,
                       alignment: Alignment.center,
                       child: SizedBox(
                         width: double.infinity,
-                        child: TextButton(onPressed: (){},
+                        child: TextButton(
+                          onPressed: (){
+                          print(email);
+                          print(senha);
+                        },
                           // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.green)),
                           style: TextButton.styleFrom(backgroundColor: Colors.deepPurple, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                           child: Text("Entrar",
@@ -144,10 +136,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                     Expanded(child: Container()),
-
-                    // SizedBox(
-                    //   height: 20,
-                    // ),
 
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 30),
