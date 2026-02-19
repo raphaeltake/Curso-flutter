@@ -8,9 +8,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String email = "";
-  String senha = "";
+  TextEditingController emailController = TextEditingController(text: "email@email.com");
+  TextEditingController senhaController = TextEditingController(text: "teste");
+  // String email = "";
+  // String senha = "";
   bool isObscureText = true;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +73,13 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: TextField(
+                        // onChanged: (value){
+                        //   email = value;
+                        // },
                         onChanged: (value){
-                          email = value;
+                          debugPrint(value);
                         },
+                        controller: emailController,
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
@@ -95,8 +103,12 @@ class _LoginPageState extends State<LoginPage> {
                       alignment: Alignment.center,
                       child: TextField(
                         obscureText: isObscureText,
+                        // onChanged: (value){
+                        //   senha = value;
+                        // },
+                        controller: senhaController,
                         onChanged: (value){
-                          senha = value;
+                          debugPrint(value);
                         },
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
@@ -154,7 +166,9 @@ class _LoginPageState extends State<LoginPage> {
                         width: double.infinity,
                         child: TextButton(
                           onPressed: (){
-
+                            debugPrint("Login");
+                            debugPrint(emailController.text);
+                            debugPrint(senhaController.text);
                         },
                           // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.green)),
                           style: TextButton.styleFrom(backgroundColor: Colors.deepPurple, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
