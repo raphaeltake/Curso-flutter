@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:primeiroscomponentes/pages/dados_cadastrais.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -27,7 +28,13 @@ class _MainPageState extends State<MainPage> {
                     width: double.infinity,
                     child: InkWell(
                       child: Text("Dados cadastrais"),
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pop(context); //Desabilita o drawer ao voltar da página DadosCadastrais.
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DadosCadastrais(texto: "Meus dados", dados: ["Nome", "Email", "Telefone", "CPF"],))
+                        );
+                      },
                     ),
                   ),
                   Divider(),
