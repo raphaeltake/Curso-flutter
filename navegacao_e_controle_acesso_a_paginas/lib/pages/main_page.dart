@@ -2,6 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:primeiroscomponentes/pages/dados_cadastrais.dart';
+import 'package:primeiroscomponentes/pages/pagina1.dart';
+import 'package:primeiroscomponentes/pages/pagina2.dart';
+import 'package:primeiroscomponentes/pages/pagina3.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -62,6 +65,22 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ),
+
+          body: Column(
+            children: [
+              Expanded(
+                child: PageView(
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Pagina1Page(),
+                    Pagina2Page(),
+                    Pagina3Page(),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
         )
         );
   }

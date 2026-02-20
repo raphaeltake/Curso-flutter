@@ -11,8 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController emailController = TextEditingController(text: "");
-  TextEditingController senhaController = TextEditingController(text: "");
+  TextEditingController emailController = TextEditingController(text: "email@email.com");
+  TextEditingController senhaController = TextEditingController(text: "teste");
   bool isObscureText = true;
 
 
