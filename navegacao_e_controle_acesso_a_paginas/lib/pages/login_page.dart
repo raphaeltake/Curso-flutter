@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:primeiroscomponentes/pages/main_page.dart';
+
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -165,12 +168,15 @@ class _LoginPageState extends State<LoginPage> {
                         child: TextButton(
                           onPressed: (){
                             if (emailController.text.trim() == "email@email.com" && senhaController.text.trim() == "teste"){
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text("Login realizado"),
-                                    backgroundColor: Colors.green,
-                                    duration: Duration(seconds: 3),
-                                  ));
+                              // Navigator.push( //adiciona btn de voltar no appBar da main page
+                              //     context,
+                              //     MaterialPageRoute(builder: (context) => MainPage())
+                              // );
+
+                              Navigator.pushReplacement( //não adiciona btn de voltar no appBar da main page, ele cria um nova stack
+                                  context,
+                                  MaterialPageRoute(builder: (context) => MainPage())
+                              );
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(

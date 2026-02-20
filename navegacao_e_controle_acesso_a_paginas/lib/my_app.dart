@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:primeiroscomponentes/pages/home_page.dart';
+import 'package:primeiroscomponentes/pages/main_page.dart';
 import 'package:primeiroscomponentes/pages/login_page.dart';
 
 class MyApp extends StatelessWidget {
