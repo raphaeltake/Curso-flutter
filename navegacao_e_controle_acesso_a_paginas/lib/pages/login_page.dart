@@ -8,10 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController emailController = TextEditingController(text: "email@email.com");
-  TextEditingController senhaController = TextEditingController(text: "teste");
-  // String email = "";
-  // String senha = "";
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController senhaController = TextEditingController(text: "");
   bool isObscureText = true;
 
 
@@ -76,9 +74,9 @@ class _LoginPageState extends State<LoginPage> {
                         // onChanged: (value){
                         //   email = value;
                         // },
-                        onChanged: (value){
-                          debugPrint(value);
-                        },
+                        // onChanged: (value){
+                        //   debugPrint(value);
+                        // },
                         controller: emailController,
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
@@ -107,9 +105,9 @@ class _LoginPageState extends State<LoginPage> {
                         //   senha = value;
                         // },
                         controller: senhaController,
-                        onChanged: (value){
-                          debugPrint(value);
-                        },
+                        // onChanged: (value){
+                        //   debugPrint(value);
+                        // },
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           // contentPadding: EdgeInsets.only(top: 0),
@@ -166,9 +164,23 @@ class _LoginPageState extends State<LoginPage> {
                         width: double.infinity,
                         child: TextButton(
                           onPressed: (){
-                            debugPrint("Login");
-                            debugPrint(emailController.text);
-                            debugPrint(senhaController.text);
+                            if (emailController.text.trim() == "email@email.com" && senhaController.text.trim() == "teste"){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text("Login realizado"),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(seconds: 3),
+                                  ));
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text("Login falhou"),
+                                    backgroundColor: Colors.red,
+                                    duration: Duration(seconds: 3),
+                                  )
+                              );
+                              debugPrint("Login falhou");
+                            }
                         },
                           // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.green)),
                           style: TextButton.styleFrom(backgroundColor: Colors.deepPurple, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
