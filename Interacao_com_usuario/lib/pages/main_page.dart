@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage> {
                         Navigator.pop(context); //Desabilita o drawer ao voltar da página DadosCadastrais.
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => DadosCadastrais(texto: "Meus dados", dados: ["Nome", "Email", "Telefone", "CPF"],))
+                            MaterialPageRoute(builder: (context) => DadosCadastrais())
                         );
                       },
                     ),
